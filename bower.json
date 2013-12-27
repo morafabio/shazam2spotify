@@ -1,0 +1,23 @@
+{
+  "name": "shazam2spotify",
+  "version": "0.1",
+  "authors": [
+    "Fabio Mora <mail@fabio.mora.name>"
+  ],
+  "description": "It transfer your Shazam tags in a Spotify playlist.",
+  "main": "public/css/main.css",
+  "license": "MIT",
+  "homepage": "http://fabiomora.com",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angularjs": "*",
+    "bootstrap": "~3.0.3"
+  }
+}
