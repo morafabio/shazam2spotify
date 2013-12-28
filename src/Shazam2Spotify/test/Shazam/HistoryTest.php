@@ -14,9 +14,9 @@ class HistoryTest extends \PHPUnit_Framework_TestCase
     {
         $html = file_get_contents(__DIR__ . '/fixtures/myshazam-history.html');
         $crawler = new Crawler();
-        $songManager = new Playlist();
+        $playlist = new Playlist();
 
-        $this->history = new History($html, $crawler, $songManager);
+        $this->history = new History($html, $crawler, $playlist);
     }
 
     public function testGetHtml()
@@ -26,7 +26,7 @@ class HistoryTest extends \PHPUnit_Framework_TestCase
 
     public function testReadTable()
     {
-        $songManager = $this->history->filter();
-        $this->assertEquals(162, $songManager->count());
+        $playlist = $this->history->filter();
+        $this->assertEquals(162, $playlist->count());
     }
 }

@@ -44,6 +44,18 @@ class MetadataTest extends \PHPUnit_Framework_TestCase
        $metadata->request($service, $method, $parameters);
     }
 
+    public function testExceptionRequest()
+    {
+        $this->markTestSkipped('Live API access (test slow).');
+
+        $this->setExpectedException('Exception');
+        $service = 'search';
+        $method = 'track';
+        $parameters = array('x', 'val1');
+
+        $this->metadata->request($service, $method, $parameters);
+    }
+
     public function getMockClient($service, $method, $parameters, $responseJson = null)
     {
        $url = "/$service/1/$method.json";
