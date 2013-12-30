@@ -23,5 +23,8 @@
   "devDependencies": {
     "angular-mocks": "~1.2.6",
     "angular-loader": "~1.2.6"
+  },
+  "resolutions": {
+    "angular": "1.2.6"
   }
 }
