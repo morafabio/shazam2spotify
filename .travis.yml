@@ -6,7 +6,7 @@ before_script:
     - ./scripts/init-dependencies.sh
 script:
     - ./scripts/test-phpunit.sh
-    - ./scripts/test-karma.sh
+#    - ./scripts/test-karma.sh
 notifications:
     email:
         - fabio.mm@gmail.com
