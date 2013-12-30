@@ -3,6 +3,7 @@
 PARENT_DIR=$(dirname $(cd "$(dirname "$0")"; pwd))
 
 cd "$PARENT_DIR"
+. "$PARENT_DIR/scripts/functions.sh"
 
 clean_dependencies () {
       . "$PARENT_DIR/scripts/clean-dependencies.sh"

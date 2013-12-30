@@ -3,7 +3,6 @@ php:
     - 5.4
     - 5.5
 before_script:
-    - ./scripts/functions.sh
     - ./scripts/init-dependencies.sh
 script:
     - ./scripts/test-php.sh
