@@ -1,7 +1,7 @@
 {
-  "name": "",
-  "description": "",
-  "repository": "",
+  "name": "shazam2spotify",
+  "description": "It transfer your Shazam tags in a Spotify playlist.",
+  "repository": "https://github.com/morafabio/shazam2spotify/",
   "devDependencies": {
     "phantomjs" : "~1.9",
     "karma" : "~0.10",
