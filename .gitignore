@@ -1,4 +1,8 @@
 .idea/
 vendor/
 composer.phar
-composer.lock
+gs/*
+!.gitkeep
+node_modules/
+tmp
+.DS_Store

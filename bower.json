@@ -19,5 +19,9 @@
   "dependencies": {
     "angular": "1.2.6",
     "bootstrap": "~3.0.3"
+  },
+  "devDependencies": {
+    "angular-mocks": "~1.2.6",
+    "angular-loader": "~1.2.6"
   }
 }

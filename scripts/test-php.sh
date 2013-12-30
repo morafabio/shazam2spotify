@@ -1,0 +1,1 @@
+phpunit -c config/ src/

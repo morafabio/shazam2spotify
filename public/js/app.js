@@ -1,6 +1,5 @@
 var app = angular.module('Spotify2ShazamApp', ['SpotifyFilters']);
 
-//LocatorCtrl.$inject = ['$scope']
 function LocatorCtrl($scope) {
 
     $scope.playlist = [];
@@ -47,11 +46,16 @@ function LocatorCtrl($scope) {
     }
 }
 
-var textBox = document.getElementById("copy");
-textBox.onfocus = function() {
-    textBox.select();
-    textBox.onmouseup = function() {
-        textBox.onmouseup = null;
-        return false;
+function TextareaController($scope, $http) {
+    $scope.selectable = function(){
+         var textBox = document.getElementById("copy");
+         textBox.onfocus = function() {
+             textBox.select();
+             textBox.onmouseup = function() {
+                textBox.onmouseup = null;
+                return false;
+             };
+         };
     };
-};
+    $scope.selectable();
+}
