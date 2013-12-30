@@ -32,6 +32,21 @@ class PlaylistTest extends \PHPUnit_Framework_TestCase
         $this->assertEquals($uri, $this->playlist[1]->getUri());
     }
 
+    public function testSlice()
+    {
+        $this->playlist->add('Hey Brother', 'Avicii', 'spotify:track:3zKST4nk4QJE77oLjUZ0Ng');
+        $this->playlist->add('Wake Me Up', 'Aloe Blacc', 'spotify:track:6SEBRJ6qYR3mnKJivWH1mW');
+        $this->playlist->add('Stay The Night (feat Haley Williams of Paramore)', 'Zedd');
+        $this->playlist->add('Gli Anni D\'Oro', 'Jake La Furia', 'spotify:track:24MbH5gEx6zbLSILbWTtWk');
+
+        $count = 2;
+        $this->playlist->slice(0, $count);
+        
+        $this->assertEquals($this->playlist->count(), $count);
+        $this->assertEquals('Wake Me Up', $this->playlist[1]->getTrack());
+    }
+
+
     public function testJson()
     {
         $this->playlist->add('Hey Brother', 'Avicii', 'spotify:track:3zKST4nk4QJE77oLjUZ0Ng');

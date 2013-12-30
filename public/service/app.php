@@ -26,7 +26,9 @@ $app->post('/locator/', function () use ($app) {
     $playlist = $history->filter();
 
     if($playlist->count() < 1) throw new Exception('No songs found or invalid file.', 415);
-    //if($playlist->count() > 10) throw new Exception('Too many songs (maximum is 10).', 416);
+    if($playlist->count() > 100) {
+        $playlist->slice(0, 100);
+    }
 
     $locator = new Locator($app['metadata']);
     $locator->setPlaylist($playlist);

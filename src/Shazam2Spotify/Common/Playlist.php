@@ -16,6 +16,11 @@ class Playlist implements \Countable, \Iterator, \ArrayAccess
         array_push($this->storage, $song);
     }
 
+    public function slice($offset, $length)
+    {
+        $this->storage = array_slice($this->storage, $offset,  $length);
+    }
+
     public function json()
     {
         $result = array();
