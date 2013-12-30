@@ -10,4 +10,6 @@ clean_dependency () {
         rm -rf "$1"
 }
 
+clean_dependency "public/vendor/"
+clean_dependency "node_modules/"
 clean_dependency "vendor/"

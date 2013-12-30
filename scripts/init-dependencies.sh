@@ -11,11 +11,16 @@ clean_dependencies () {
 
 initialize_composer () {
       if [ ! -f "composer.phar" ]; then
-              echo "Could not find composer.phar, downloading it now..."
-                  download_composer "http://getcomposer.org/composer.phar"
-                    fi
-                      /usr/bin/env php composer.phar install
+        echo "Could not find composer.phar, downloading it now..."
+        download_composer "http://getcomposer.org/composer.phar"
+      fi
+      /usr/bin/env php composer.phar install
 }
 
 clean_dependencies
 initialize_composer
+
+apt-get install nodejs
+npm install -g bower
+npm install
+bower install
