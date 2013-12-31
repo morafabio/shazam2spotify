@@ -4,9 +4,10 @@ namespace Shazam2Spotify\test\Shazam;
 
 use Shazam2Spotify\Shazam\History;
 use Shazam2Spotify\Common\Playlist;
+use Shazam2Spotify\test\TestCase;
 use Symfony\Component\DomCrawler\Crawler;
 
-class HistoryTest extends \PHPUnit_Framework_TestCase
+class HistoryTest extends TestCase
 {
     protected $history;
 

@@ -3,8 +3,9 @@
 namespace Shazam2Spotify\test\Common;
 
 use Shazam2Spotify\Common\Song;
+use Shazam2Spotify\test\TestCase;
 
-class SongTest extends \PHPUnit_Framework_TestCase
+class SongTest extends TestCase
 {
     protected $song;
 

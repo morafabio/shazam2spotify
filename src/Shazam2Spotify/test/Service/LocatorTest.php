@@ -7,26 +7,27 @@ use Shazam2Spotify\Common\Playlist;
 use Shazam2Spotify\Spotify\Metadata;
 use Shazam2Spotify\test\Spotify\MetadataTest;
 use Guzzle\Http\Client;
+use Shazam2Spotify\test\TestCase;
 
-class LocatorTest extends \PHPUnit_Framework_TestCase
+class LocatorTest extends TestCase
 {
     protected $locator;
 
-    public function testLocateSongs()
+    public function testLocateASong()
     {
         $track = '15 anni';
         $artist = 'Rumatera';
 
-        $playlist = new Playlist();
-        $playlist->add($track, $artist);
-
-        $metadataTest = new MetadataTest();
-        $mockClient = $metadataTest->getMockClient(
+        $mockClient = $this->getMockGuzzleClient(
             'search', 'track',
             array('q' => "track:\"$track\" artist:\"$artist\""),
             unserialize(file_get_contents(__DIR__. '/../Spotify/fixtures/searchTrack.json'))
         );
+
         $metadata = new Metadata($mockClient);
+
+        $playlist = new Playlist();
+        $playlist->add($track, $artist);
 
         $locator = new Locator($metadata);
         $locator->setPlaylist($playlist);
