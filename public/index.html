@@ -54,9 +54,9 @@
                     </div>
 
                     <div class="well margin-top-10">
-                        <input ng-model-instant type="file" autocomplete="off" onchange="angular.element(this).scope().uploadFile(this)" />
+                        <input id="file_input" ng-model-instant type="file" autocomplete="off" onchange="angular.element(this).scope().uploadFile(this)" />
                     </div>
-                    <div class="well well-sm">
+                    <div class="well well-sm" id="status_text">
                         {{ statusText }}
                     </div>
                 </section>
@@ -72,7 +72,7 @@
                                 <th>Found</th>
                             </tr>
                         </thead>
-                        <tbody>
+                        <tbody">
                             <tr ng-repeat="song in playlist">
                                 <td>{{ song.track }}</td>
                                 <td>{{ song.artist }}</td>

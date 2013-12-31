@@ -3,4 +3,7 @@
 <phpunit backupGlobals="true"
          colors="true"
          bootstrap="../vendor/autoload.php">
+    <php>
+        <const name="TEST_WEB_ROOT" value="http://192.168.56.101/shazam2spotify/public/" />
+    </php>
 </phpunit>

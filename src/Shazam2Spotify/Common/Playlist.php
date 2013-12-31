@@ -23,6 +23,7 @@ class Playlist implements \Countable, \Iterator, \ArrayAccess
 
     public function json()
     {
+        // TODO: extract this responsability with Decorator Pattern
         $result = array();
         foreach($this->storage as $song)
         {
