@@ -2,12 +2,11 @@
 
 namespace Shazam2Spotify\test\Service;
 
+use Shazam2Spotify\test\TestCase;
 use Shazam2Spotify\Service\Locator;
 use Shazam2Spotify\Common\Playlist;
 use Shazam2Spotify\Spotify\Metadata;
-use Shazam2Spotify\test\Spotify\MetadataTest;
 use Guzzle\Http\Client;
-use Shazam2Spotify\test\TestCase;
 
 class LocatorTest extends TestCase
 {

@@ -2,9 +2,9 @@
 
 namespace Shazam2Spotify\test\Common;
 
+use Shazam2Spotify\test\TestCase;
 use Shazam2Spotify\Common\Playlist;
 use Shazam2Spotify\Common\Song;
-use Shazam2Spotify\test\TestCase;
 
 class PlaylistTest extends TestCase
 {

@@ -2,9 +2,9 @@
 
 namespace Shazam2Spotify\test\Spotify;
 
+use Shazam2Spotify\test\TestCase;
 use Shazam2Spotify\Spotify\Metadata;
 use Guzzle\Http\Client;
-use Shazam2Spotify\test\TestCase;
 
 class MetadataTest extends TestCase
 {
