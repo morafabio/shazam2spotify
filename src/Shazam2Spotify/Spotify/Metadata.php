@@ -16,6 +16,7 @@ class Metadata
 
     public function __construct(Client $client, $cachePath=null)
     {
+        // TODO: would be better to inject the cache plugin
         if(!$cachePath) $cachePath = sys_get_temp_dir() . '/SpotifyMetadataAPI-Guzzle/';
         $cachePlugin = new CachePlugin(array(
             'storage' => new DefaultCacheStorage(

@@ -45,17 +45,3 @@ function LocatorCtrl($scope) {
         $scope.$apply();
     }
 }
-
-function TextareaController($scope, $http) {
-    $scope.selectable = function(){
-         var textBox = document.getElementById("copy");
-         textBox.onfocus = function() {
-             textBox.select();
-             textBox.onmouseup = function() {
-                textBox.onmouseup = null;
-                return false;
-             };
-         };
-    };
-    $scope.selectable();
-}

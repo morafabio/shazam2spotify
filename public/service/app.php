@@ -25,11 +25,14 @@ $app->post('/locator/', function () use ($app) {
     $history = new History($html, new Crawler(), new Playlist());
     $playlist = $history->filter();
 
+    // TODO: put this responsibility somewhere else (such as a decorator?)
     if($playlist->count() < 1) throw new Exception('No songs found or invalid file.', 415);
-    if($playlist->count() > 100) {
-        $playlist->slice(0, 100);
+    $maxResults = 100;
+    if($playlist->count() > $maxResults) {
+        $playlist->slice(0, $maxResults);
     }
 
+    // TODO: extract to DIC
     $locator = new Locator($app['metadata']);
     $locator->setPlaylist($playlist);
     $playlist = $locator->lookup();
@@ -42,16 +45,14 @@ $app->error(function (\Exception $e, $code) {
         case 404:
             $message = 'The requested page could not be found.';
             break;
+        case 500:
+            $message = 'Internal Server Error. Please contact the system administrator.';
+            break;
         default:
             $message = $e->getMessage();
     }
     $response = array('error' => $message);
     return new Response(json_encode($response), $code, ['Content-Type' => 'application/json']);
-});
-
-$app->post('/locator/test.successful', function () use ($app) {
-    $playlist = unserialize(file_get_contents(__DIR__ . '/../../src/Shazam2Spotify/test/functional/fixtures/locator-success.serialized'));
-    return new Response($playlist->json(), 200, ['Content-Type' => 'application/json']);
 });
 
 $app->run();
